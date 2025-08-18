@@ -8,9 +8,12 @@ export default function AuthButton() {
     return (
       <div>
         <p>Вітаю, {session.user.name}</p>
-        <button onClick={() => signOut()}>Вийти</button>
+        <button onClick={(e) => {
+          e.preventDefault();
+          signOut()
+        }}>Вийти</button>
       </div>
     );
   }
-  return <button onClick={() => signIn("google")}>Увійти через Google</button>;
+    return <button onClick={(e) => { signIn("google"); e.preventDefault() }} type="button">Увійти через Google</button>;
 }
