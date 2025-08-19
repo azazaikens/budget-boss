@@ -15,5 +15,6 @@ export default function AuthButton() {
       </div>
     );
   }
-    return <button onClick={(e) => { signIn("google"); e.preventDefault() }} type="button">Увійти через Google</button>;
+  return <button className="bg-white flex items-center justify-center gap-[10px] py-[11px] px-5 rounded-2xl cursor-pointer text-background" onClick={(e) => { signIn("google"); e.preventDefault() }} type="button">
+    <img src="../../../assets/google-symbol.png" alt="google icon"/>Google</button>;
 }
