@@ -10,9 +10,9 @@ export default function LoginForm() {
       <form action="" className="flex flex-col items-center justify-center ">
         <div className="flex flex-col items-center justify-center gap-5 pb-8 text-center">
           <h3>You can log in with your Google Account:</h3>
-          <SessionProvider>
+          {/* <SessionProvider> */}
                 <AuthButton />
-          </SessionProvider>
+          {/* </SessionProvider> */}
         </div>
         <h3 className="pb-8">Or log in using an email and password,
 after registering:</h3>

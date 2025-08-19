@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Roboto, Roboto_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header/Header"
+import { SessionProvider } from "next-auth/react";
+import { Providers } from "@/components/Providers/Provides";
 
 const robotoSans = Roboto({
   variable: "--font-roboto-sans",
@@ -26,10 +28,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${robotoSans.variable} ${robotoMono.variable} antialiased `}
+        className={`${robotoSans.variable} ${robotoMono.variable}`}
       >
+        <Providers>
          <Header />
           <div className="max-w-[1280px] mx-auto">{children}</div>
+        </Providers>
       </body>
     </html>
   );

@@ -10,16 +10,16 @@ const handler = NextAuth({
     }),
   ],
   // secret: process.env.NEXTAUTH_SECRET,
-  callbacks: {
-    async redirect({ url, baseUrl }) {
-      // Якщо користувач тільки що залогінився — ведемо його на профіль
-      if (url.startsWith("/")) return `${baseUrl}${url}/bubub`;
-      if (new URL(url).origin === baseUrl) return `${url}/user/${user.id}`;
+  // callbacks: {
+  //   async redirect({ url, baseUrl }) {
+  //     // Якщо користувач тільки що залогінився — ведемо його на профіль
+  //     if (url.startsWith("/")) return `${baseUrl}${url}/bubub`;
+  //     if (new URL(url).origin === baseUrl) return `${url}/user/${user.id}`;
 
-      // 👇 Тут кастомний редірект, наприклад на особисту сторінку
-      return `${baseUrl}/dashboard`;
-    },
-  },
+  //     // 👇 Тут кастомний редірект, наприклад на особисту сторінку
+  //     return `${baseUrl}/dashboard`;
+  //   },
+  // },
 });
 
 export { handler as GET, handler as POST };

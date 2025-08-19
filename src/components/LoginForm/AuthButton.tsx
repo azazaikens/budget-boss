@@ -5,13 +5,13 @@ export default function AuthButton() {
   const { data: session } = useSession();
 
   if (session?.user) {
+    console.log(session)
     return (
       <div>
-        <p>Вітаю, {session.user.name}</p>
-        <button onClick={(e) => {
+        <button className="cursor-pointer" onClick={(e) => {
           e.preventDefault();
           signOut()
-        }}>Вийти</button>
+        }}>Exit</button>
       </div>
     );
   }
